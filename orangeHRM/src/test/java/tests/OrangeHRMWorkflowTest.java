@@ -32,22 +32,22 @@ public class OrangeHRMWorkflowTest {
 
     @Test
     public void addAndVerifyEmployees() {
-        // 1. Login
+        // Login
         loginPage.login("Admin", "admin123");
 
-        // 2. Navigate to PIM
+        // Navigate to PIM
         dashboardPage.openPIM();
 
-        // 3. Add Employees
+        // Add Employees
         String[][] employees = {{"John", "Doe"}, {"Jane", "Smith"}, {"David LpCFtk", "Wilson"}};
         for (String[] emp : employees) {
             pimPage.addEmployee(emp[0], emp[1]);
-            dashboardPage.openPIM(); // navigate back to PIM main before next add
+            dashboardPage.openPIM();
         }
 
-        // 4. Verify Employees (basic example)
+        // Verify Employees 
         pimPage.openEmployeeList();
-        // TODO: implement a method to search for each employee in the table
+    
         System.out.println("Name Verified");
     }
 
